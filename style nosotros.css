@@ -1,0 +1,156 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4; /* Color de fondo suave */
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/* Header */
+header {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #44444459;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4500;
+}
+
+/* Sección de Contacto */
+#contact {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de Imágenes de Contacto */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Item de Contacto */
+.contact-item {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.contact-item h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.contact-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Botón CTA */
+.cta-button {
+    background-color: #ff4500; /* Color de fondo llamativo para el botón */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px; /* Tamaño mayor para el botón */
+    border-radius: 8px; /* Bordes más redondeados */
+    font-size: 1em;
+    font-weight: 600; /* Peso de fuente más destacado */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease; /* Transiciones suaves */
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px; /* Espacio superior para separar del contenido */
+}
+
+.cta-button::before {
+    content: ''; /* Crear un pseudo-elemento antes del contenido del botón */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Tamaño del relleno de efecto */
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Color y opacidad del relleno */
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease; /* Transición suave para el relleno */
+    z-index: 0; /* Coloca el pseudo-elemento detrás del texto */
+}
+
+.cta-button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Escala el relleno al pasar el ratón */
+}
+
+.cta-button:hover {
+    background-color: #e03d00; /* Color de fondo más oscuro al pasar el ratón */
+    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Sombra más intensa al pasar el ratón */
+    letter-spacing: 1px; /* Espaciado de letras aumentado */
+}
+
+.cta-button span {
+    position: relative;
+    z-index: 1; /* Coloca el texto sobre el relleno */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #444;
+    margin-top: 40px;
+}

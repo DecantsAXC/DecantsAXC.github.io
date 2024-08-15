@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida - La Esencia del Lujo</title>
+    <link rel="stylesheet" href="style3.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<body>
+    <header>
+        <h1>La Esencia del Lujo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagina html.html">Productos</a></li>
+                <li><a href="nosotros.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Bienvenida -->
+    <section class="welcome">
+        <div class="welcome-content">
+            <h2>Bienvenido a La Esencia del Lujo</h2>
+            <p>Descubre una colección exclusiva de perfumes, donde cada fragancia está diseñada para reflejar elegancia y sofisticación. Permítenos guiarte en un viaje sensorial que te ayudará a encontrar el perfume perfecto para cualquier ocasión.</p>
+            <a href="pagina html.html" class="cta-button">Explorar Colección</a>
+        </div>
+        <div>
+        </div>
+    </section>
+
+    <!-- Imagen Dinámica -->
+    <div class="image-container">
+        <img id="dynamicImage" src=modelo.webp alt="Imagen Dinámica">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Decants AXC La esencia del Lujo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Código JavaScript para manejar la transición
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+            const transitionDuration = 750; // Debe coincidir con la duración de la transición en el CSS
+
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previene la navegación inmediata
+
+                    const href = this.getAttribute('href'); // Obtiene la URL del enlace
+
+                    document.body.classList.add('fade-out'); // Inicia la transición
+
+                    // Espera a que la transición termine antes de redirigir
+                    setTimeout(() => {
+                        window.location.href = href; // Redirige a la nueva página
+                    }, transitionDuration); // Coincide con la duración de la transición en el CSS
+                });
+            });
+        });
+                // Código JavaScript para la imagen dinámica con transición
+                document.addEventListener('DOMContentLoaded', () => {
+            const images = ['modelo.webp']; // Lista de imágenes
+            let currentIndex = 2; // Índice de la imagen actual
+
+            const imgElement = document.getElementById('dynamicImage'); // Elemento de imagen
+            
+            function changeImage() {
+                imgElement.classList.add('hidden'); // Oculta la imagen actual con una transición
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length; // Cambia al siguiente índice
+                    imgElement.src = images[currentIndex]; // Cambia la fuente de la imagen
+                    imgElement.classList.remove('hidden'); // Muestra la nueva imagen con una transición
+                }, 1000); // Debe coincidir con la duración de la transición de opacidad
+            }
+            
+            setInterval(changeImage, 200000); // Cambia la imagen cada 3000 ms (3 segundos)
+        });
+    </script>
+</body>

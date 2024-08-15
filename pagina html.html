@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Perfumes</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Aplica la clase 'loaded' después de que la página haya terminado de cargarse
+            document.body.classList.add('loaded');
+
+            // Maneja la transición al hacer clic en los enlaces
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetUrl = link.getAttribute('href');
+                    document.body.classList.remove('loaded');
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 500); // Tiempo de la transición en milisegundos
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>PRODUCTOS</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagina html.html">Productos</a></li>
+                <li><a href="nosotros.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+          
+        </section>
+        
+        <section id="products">
+            <h2>DESTACADAS</h2>
+            <div class="product-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <img src="millon.webp" alt="Perfume Floral">
+                    <h3>One Million Royal</h3>
+                    <p>Un aroma fresco y elegante con notas florales.</p>
+                    <span>$110.00</span>
+                    <button onclick="window.location.href='boton1.html'">INFO+</button>
+                </div>
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <img src="lucky.jpg" alt="Perfume Amaderado">
+                    <h3>1 Million Lucky</h3>
+                    <p>Un perfume sofisticado con notas amaderadas y cálidas.</p>
+                    <span>$100.00</span>
+                    <button onclick="window.location.href='boton2.html'">INFO+</button>
+                </div>
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <img src="perrys.jpeg" alt="Perfume Cítrico">
+                    <h3>Perry Ellis 360 For Men</h3>
+                    <p>Una fragancia vivaz y refrescante con notas cítricas.</p>
+                    <span>$90.00</span>
+                    <button onclick="window.location.href='boton3.html'">INFO+</button>
+                </div>
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <img src="scandal.jpg" alt="Perfume Amaderado">
+                    <h3>SCANDAL de Jean Paul Gaultier</h3>
+                    <p>Un perfume sofisticado con notas amaderadas y cálidas.</p>
+                    <span>$120.00</span>
+                    <button onclick="window.location.href='SCANDAL.html'">INFO+</button>
+                </div>
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <img src="ferrari.webp" alt="Perfume Amaderado">
+                    <h3>Scuderia Ferrari Red</h3>
+                    <p>Un perfume sofisticado con notas amaderadas y cálidas.</p>
+                    <span>$70.00</span>
+                    <button onclick="window.location.href='perfume scuderia Ferrari.html'">INFO+</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2></h2>
+            <p></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Decants AXC la esencia del Lujo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

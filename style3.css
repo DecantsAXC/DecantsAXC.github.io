@@ -1,0 +1,195 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente elegante */
+    background-image: url('modelo2.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen de fondo */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el scroll durante la transición */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la ventana gráfica */
+    transition: opacity 0.75s ease, transform 0.75s ease; /* Transición suave para el desvanecimiento y escalado */
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    color: #fff;
+    padding: 20px 0; /* Más padding para el encabezado */
+    text-align: center;
+    border-bottom: 2px solid #444; /* Línea inferior para un efecto elegante */
+    background-image: url('header-bg.jpg'); /* Imagen de fondo para el encabezado */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header .logo {
+    max-width: 150px; /* Ajusta el tamaño del logo */
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
+    font-weight: 700; /* Peso de fuente para mayor impacto */
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px; /* Espaciado más amplio entre los elementos de navegación */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em; /* Tamaño de fuente mayor para los enlaces */
+    font-weight: 500; /* Peso de fuente para destacar los enlaces */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+nav ul li a:hover {
+    color: #ff4500; /* Color de enlace destacado al pasar el ratón */
+}
+
+/* Sección de Bienvenida */
+section.welcome {
+    background-image: url('scandalasd.jpg'); /* Imagen de fondo para la sección de bienvenida */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 60px 20px; /* Espaciado para la sección de bienvenida */
+    text-align: center;
+    z-index: 1; /* Asegura que la sección de bienvenida esté encima del fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contenido de bienvenida */
+section.welcome .welcome-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para el contenido */
+    display: inline-block;
+    padding: 30px;
+    border-radius: 12px; /* Bordes más redondeados para un diseño más moderno */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra de caja para el contenido */
+    margin: 0 auto; /* Centra el contenido dentro del contenedor de bienvenida */
+}
+
+/* Título de bienvenida */
+section.welcome h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
+    font-weight: 700; /* Peso de fuente para mayor impacto */
+}
+
+/* Párrafo de bienvenida */
+section.welcome p {
+    margin-bottom: 30px; /* Ajusta este valor para mover el párrafo hacia abajo */
+    font-size: 1.2em; /* Tamaño de fuente mayor para el párrafo */
+}
+
+/* Botón CTA */
+.cta-button {
+    background-color: #ff4500; /* Color de fondo llamativo para el botón */
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px; /* Tamaño mayor para el botón */
+    border-radius: 12px; /* Bordes más redondeados */
+    font-size: 1.2em;
+    font-weight: 600; /* Peso de fuente más destacado */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease; /* Transiciones suaves */
+    position: relative;
+    overflow: hidden; /* Para que el efecto de relleno se muestre correctamente */
+    display: inline-block;
+    text-align: center;
+    margin-top: 1px; /* Ajusta este valor para mover el botón hacia abajo */
+}
+
+.cta-button::before {
+    content: ''; /* Crear un pseudo-elemento antes del contenido del botón */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Tamaño del relleno de efecto */
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Color y opacidad del relleno */
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease; /* Transición suave para el relleno */
+    z-index: 0; /* Coloca el pseudo-elemento detrás del texto */
+}
+
+.cta-button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Escala el relleno al pasar el ratón */
+}
+
+.cta-button:hover {
+    background-color: #e03d00; /* Color de fondo más oscuro al pasar el ratón */
+    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Sombra más intensa al pasar el ratón */
+    letter-spacing: 1px; /* Espaciado de letras aumentado */
+}
+
+.cta-button span {
+    position: relative;
+    z-index: 1; /* Coloca el texto sobre el relleno */
+}
+
+/* Imagen Dinámica */
+.image-container {
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 1;
+    transition: opacity 1s ease; /* Transición suave para el cambio de imagen */
+}
+
+.image-container img.hidden {
+    opacity: 0;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con opacidad */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #444; /* Línea superior para un efecto elegante */
+    margin-top: auto; /* Empuja el pie de página hacia abajo */
+}
+
+/* Transiciones suaves entre páginas */
+.fade-out {
+    opacity: 0;
+    transform: scale(1.1); /* Escalado para el efecto de salida */
+    z-index: 0; /* Coloca el contenido actual detrás del nuevo contenido */
+    transition: opacity 1s ease, transform 0.75s ease; /* Transición suave */
+}

@@ -1,0 +1,201 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente más elegante */
+    background-image: url(pefumetraje.webp);
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
+    background-position: center; /* Centra la imagen de fondo */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    color: #fff;
+    padding: 20px 0; /* Más padding para el encabezado */
+    text-align: center;
+    border-bottom: 2px solid #444; /* Línea inferior para un efecto elegante */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
+    font-weight: 700; /* Peso de fuente para mayor impacto */
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px; /* Espaciado más amplio entre los elementos de navegación */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em; /* Tamaño de fuente mayor para los enlaces */
+    font-weight: 500; /* Peso de fuente para destacar los enlaces */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+nav ul li a:hover {
+    color: #ff4500; /* Color de enlace destacado al pasar el ratón */
+}
+
+/* Main */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grid de productos */
+.product-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los productos en el contenedor */
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Bordes más redondeados para un diseño más moderno */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra de caja al pasar el ratón */
+    transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin: 15px 0;
+    font-size: 1.5em; /* Tamaño de fuente mayor para los títulos */
+    color: #333;
+}
+
+.product-card span {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.3em; /* Tamaño de fuente mayor para el precio */
+    color: #ff4500; /* Color de precio destacado */
+}
+
+.product-card button {
+    background-color: #ff4500; /* Color de fondo llamativo */
+    color: #fff;
+    border: none;
+    padding: 12px 24px; /* Más padding para un botón más grande */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1.1em; /* Tamaño de fuente mayor para el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #e03d00; /* Color de fondo más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+/* Formularios */
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra de caja para el formulario */
+}
+
+form label {
+    display: block;
+    font-size: 1.1em; /* Tamaño de fuente mayor para las etiquetas */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente coherente */
+}
+
+form button {
+    background-color: #ff4500; /* Color de fondo llamativo */
+    color: #fff;
+    border: none;
+    padding: 12px 24px; /* Más padding para un botón más grande */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1.1em; /* Tamaño de fuente mayor para el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e03d00; /* Color de fondo más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con opacidad */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #444; /* Línea superior para un efecto elegante */
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Transiciones suaves entre páginas */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Para asegurar que el contenido de la página cargue con visibilidad */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}

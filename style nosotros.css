@@ -6,32 +6,47 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Evita el scroll horizontal */
+    transition: background-color 0.3s ease; /* Transición para el fondo */
 }
 
 /* Header */
 header {
-    background-color: rgb(0, 0, 0);
+    background-color: #000; /* Fondo negro */
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    border-bottom: 2px solid #44444459;
+    border-bottom: 2px solid rgba(68, 68, 68, 0.5); /* Línea inferior con opacidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    position: relative;
+    z-index: 1000;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
     font-weight: 700;
+    letter-spacing: 1px; /* Espaciado entre letras para un efecto elegante */
+    text-transform: uppercase; /* Mayúsculas para un impacto visual */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave para color y sombra */
 }
 
+header h1:hover {
+    color: #ff4500; /* Cambio de color al pasar el ratón */
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* Sombra de texto al pasar el ratón */
+}
+
+/* Navegación */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los elementos de navegación */
 }
 
 nav ul li {
     display: inline;
-    margin: 0 20px;
 }
 
 nav ul li a {
@@ -39,11 +54,15 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 10px 15px; /* Padding para un área de clic más grande */
+    border-radius: 20px; /* Bordes redondeados para un estilo moderno */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
 nav ul li a:hover {
-    color: #ff4500;
+    color: #ff4500; /* Color de enlace en hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido en hover */
+    transform: translateY(-3px); /* Efecto de elevación al pasar el cursor */
 }
 
 /* Sección de Contacto */
@@ -51,16 +70,20 @@ nav ul li a:hover {
     background-color: #fff;
     padding: 60px 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 #contact h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: #333; /* Color del título */
 }
 
 #contact p {
     font-size: 1.2em;
     margin-bottom: 40px;
+    color: #666; /* Color del texto */
 }
 
 /* Contenedor de Imágenes de Contacto */
@@ -79,7 +102,7 @@ nav ul li a:hover {
     padding: 20px;
     width: 280px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
 
 .contact-item img {
@@ -93,6 +116,7 @@ nav ul li a:hover {
     margin: 15px 0;
     font-size: 1.5em;
     font-weight: 600;
+    color: #333; /* Color del título del contacto */
 }
 
 .contact-item p {
@@ -105,14 +129,16 @@ nav ul li a:hover {
     background-color: #ff4500; /* Color de fondo llamativo para el botón */
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px; /* Tamaño mayor para el botón */
+    padding: 12px 24px; /* Tamaño mayor para el botón */
     border-radius: 8px; /* Bordes más redondeados */
     font-size: 1em;
     font-weight: 600; /* Peso de fuente más destacado */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease; /* Transiciones suaves */
     display: inline-block;
     text-align: center;
-    margin-top: 20px; /* Espacio superior para separar del contenido */
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Coloca el botón sobre otros elementos */
 }
 
 .cta-button::before {
@@ -153,4 +179,5 @@ footer {
     padding: 20px 0;
     border-top: 2px solid #444;
     margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil en la parte superior */
 }

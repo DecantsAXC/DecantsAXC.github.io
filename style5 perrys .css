@@ -10,7 +10,7 @@ html, body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-image: url(360f.jpg);
+    background-image: url('360f.jpg');
     background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
     background-position: center; /* Centra la imagen de fondo */
     height: 100%;
@@ -21,17 +21,23 @@ html, body {
 header {
     background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad para un efecto elegante */
     color: #ffffff;
-    padding: 20px 30px; /* Más padding para el encabezado */
+    padding: 20px 30px;
     text-align: center;
-    border-bottom: 2px solid #444; /* Línea inferior para separar el encabezado del resto del contenido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil para dar profundidad */
+    border-bottom: 2px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
-    font-weight: 700; /* Peso de fuente mayor para mayor impacto */
-    color: #ff4500; /* Color llamativo para el título */
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ff4500;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave para color y sombra */
+}
+
+header h1:hover {
+    color: #ff6347; /* Color llamativo al pasar el ratón */
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* Sombra sutil en hover */
 }
 
 /* Navegación */
@@ -39,24 +45,30 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado más amplio entre los elementos de navegación */
 }
 
 nav ul li {
     display: inline;
-    margin: 0 20px; /* Espaciado más amplio entre los elementos de navegación */
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2em; /* Tamaño de fuente mayor para los enlaces */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    font-size: 1.2em;
+    padding: 10px 15px; /* Añadido padding para mayor área de clic */
+    border-radius: 20px; /* Bordes redondeados */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
 nav ul li a:hover {
-    color: #ff6347; /* Color de enlace destacado al pasar el ratón */
+    color: #ff6347; /* Color destacado al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido en hover */
     text-decoration: underline;
+    transform: translateY(-3px); /* Efecto de elevación en hover */
 }
 
 /* Main */
@@ -71,70 +83,73 @@ main {
     display: flex;
     gap: 30px;
     justify-content: space-between;
+    flex-wrap: wrap; /* Ajuste en pantallas más pequeñas */
 }
 
 /* Detalles del producto */
 .product-details {
     flex: 2;
-    background-color: rgba(61, 59, 59, 0.75); /* Fondo semi-transparente */
+    background-color: rgba(61, 59, 59, 0.75);
     border: 1px solid #000000;
-    border-radius: 10px; /* Bordes más redondeados para un diseño moderno */
-    padding: 30px; /* Más padding para un aspecto espacioso */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre otros elementos si es necesario */
 }
 
 .product-details h2 {
     margin-bottom: 20px;
-    color: #fff; /* Color del texto más claro para contrastar con el fondo */
-    font-size: 2.5em; /* Tamaño de fuente mayor para el título de la sección */
-    font-weight: 600; /* Peso de fuente mayor para el título */
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 600;
 }
 
 .product-details img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Bordes redondeados para la imagen */
-    margin-bottom: 20px; /* Espacio más grande debajo de la imagen */
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .product-details p {
     margin-bottom: 20px;
-    color: #fff; /* Color del texto más claro para una mejor legibilidad sobre el fondo oscuro */
-    font-size: 1.2em; /* Tamaño de fuente ligeramente mayor */
+    color: #fff;
+    font-size: 1.2em;
 }
 
 /* Botón INFO+ */
 .product-details button {
-    background-color: #ff4500; /* Color de fondo llamativo */
+    background-color: #ff4500;
     color: #fff;
     border: none;
-    padding: 15px 30px; /* Más padding para un botón más grande */
-    border-radius: 8px; /* Bordes más redondeados */
+    padding: 15px 30px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.2em; /* Tamaño de fuente mayor para el botón */
+    font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px; /* Espaciado superior para separar el botón del contenido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product-details button:hover {
-    background-color: #ff6347; /* Color de fondo más claro al pasar el ratón */
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    background-color: #ff6347;
+    transform: scale(1.05); /* Efecto de aumento en hover */
 }
 
 /* Productos relacionados */
 .related-products {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ddd;
-    border-radius: 10px; /* Bordes más redondeados */
+    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .related-products h2 {
-    font-size: 2em; /* Tamaño de fuente mayor para el título de productos relacionados */
-    color: #333; /* Color de texto oscuro para contraste */
+    font-size: 2em;
+    color: #333;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -146,7 +161,12 @@ main {
     padding: 15px;
     margin-bottom: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Transición suave para el efecto de aumento */
+}
+
+.related-product-card:hover {
+    transform: scale(1.02); /* Efecto de aumento en hover */
 }
 
 .related-product-card img {
@@ -156,56 +176,56 @@ main {
 }
 
 .related-product-card h3 {
-    font-size: 1.5em; /* Tamaño de fuente mayor para el nombre del producto relacionado */
-    color: #ff4500; /* Color llamativo para el nombre del producto */
+    font-size: 1.5em;
+    color: #ff4500;
     margin-bottom: 10px;
 }
 
 .related-product-card p {
-    font-size: 1.1em; /* Tamaño de fuente para la descripción */
+    font-size: 1.1em;
     color: #333;
     margin-bottom: 10px;
 }
 
 .related-product-card span {
     display: block;
-    font-size: 1.3em; /* Tamaño de fuente para el precio */
-    color: #ff4500; /* Color llamativo para el precio */
-    font-weight: 600; /* Peso de fuente mayor para el precio */
+    font-size: 1.3em;
+    color: #ff4500;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
 .related-product-card button {
-    background-color: #ff4500; /* Color de fondo llamativo */
+    background-color: #ff4500;
     color: #fff;
     border: none;
-    padding: 10px 20px; /* Padding para el botón */
-    border-radius: 5px; /* Bordes redondeados para el botón */
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em; /* Tamaño de fuente para el botón */
+    font-size: 1em;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .related-product-card button:hover {
-    background-color: #ff6347; /* Color de fondo más claro al pasar el ratón */
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    background-color: #ff6347;
+    transform: scale(1.05); /* Efecto de aumento en hover */
 }
 
 /* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con opacidad para una apariencia elegante */
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     text-align: center;
-    padding: 20px 0; /* Más padding para el pie de página */
-    border-top: 2px solid #444; /* Línea superior para separar el pie de página del contenido */
+    padding: 20px 0;
+    border-top: 2px solid #444;
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil en la parte superior del pie de página */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
-    font-size: 1.1em; /* Tamaño de fuente del pie de página */
+    font-size: 1.1em;
     margin: 0;
 }
 
@@ -217,23 +237,23 @@ footer .footer-content {
 
 footer .footer-content h3 {
     margin-bottom: 10px;
-    font-size: 1.8em; /* Tamaño de fuente mayor para el título del pie de página */
-    color: #ff4500; /* Color del título del pie de página */
+    font-size: 1.8em;
+    color: #ff4500;
 }
 
 footer .footer-content p {
     font-size: 1.1em;
-    color: #ddd; /* Color de texto más claro para una mejor legibilidad */
+    color: #ddd;
 }
 
 footer .footer-content a {
-    color: #ff4500; /* Color de enlace destacado */
+    color: #ff4500;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    transition: color 0.3s ease;
 }
 
 footer .footer-content a:hover {
-    color: #fff; /* Color de enlace más claro al pasar el ratón */
+    color: #fff;
     text-decoration: underline;
 }

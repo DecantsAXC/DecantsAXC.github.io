@@ -19,19 +19,30 @@ html, body {
 
 /* Header */
 header {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad para un efecto elegante */
-    color: #ffffff;
-    padding: 20px 30px; /* Más padding para el encabezado */
+    background-color: #000; /* Fondo negro */
+    color: #fff;
+    padding: 20px 0; /* Ajustar el padding a 20px arriba y abajo */
     text-align: center;
-    border-bottom: 2px solid #444; /* Línea inferior para separar el encabezado del resto del contenido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil para dar profundidad */
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
 }
 
+/* Estilo del título del header */
 header h1 {
     margin: 0;
-    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
-    font-weight: 700; /* Peso de fuente mayor para mayor impacto */
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px; /* Espaciado entre letras para una apariencia más refinada */
+    text-transform: uppercase; /* Mayúsculas para mayor impacto */
+    position: relative;
+    z-index: 2;
     color: #ff4500; /* Color llamativo para el título */
+    transition: text-shadow 0.3s ease; /* Transición para la sombra del texto */
+}
+
+header h1:hover {
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* Sombra del texto en hover */
 }
 
 /* Navegación */
@@ -39,24 +50,46 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Mayor espacio entre los elementos de la lista */
 }
 
 nav ul li {
     display: inline;
-    margin: 0 20px; /* Espaciado más amplio entre los elementos de navegación */
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
     font-size: 1.2em; /* Tamaño de fuente mayor para los enlaces */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    padding: 10px 20px; /* Mayor padding para un área de clic más grande */
+    border-radius: 30px; /* Bordes redondeados para botones más modernos */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    position: relative; /* Para efectos de pseudo-elementos */
+    font-weight: 500; /* Un poco más de peso para los enlaces */
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
 }
 
 nav ul li a:hover {
-    color: #ff6347; /* Color de enlace destacado al pasar el ratón */
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco translúcido en el hover */
+    color: #fff;
+    transform: translateY(-3px); /* Efecto de elevación al pasar el cursor */
 }
 
 /* Main */

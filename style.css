@@ -8,27 +8,44 @@
 /* Estilos generales */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente más elegante */
-    background-image: url(neg.jpg);
+    background-image: url('neg.jpg');
     background-size: cover; /* Asegura que la imagen de fondo cubra toda el área */
     background-position: center; /* Centra la imagen de fondo */
     color: #333;
     margin: 0;
     padding: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 /* Header */
 header {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    background-color: #000; /* Fondo negro */
     color: #fff;
     padding: 20px 0; /* Más padding para el encabezado */
     text-align: center;
-    border-bottom: 2px solid #444; /* Línea inferior para un efecto elegante */
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em; /* Tamaño de fuente mayor para el título */
     font-weight: 700; /* Peso de fuente para mayor impacto */
+    letter-spacing: 1px; /* Espaciado entre letras para una apariencia más refinada */
+    text-transform: uppercase; /* Mayúsculas para mayor impacto */
+    position: relative;
+    z-index: 2;
+    transition: text-shadow 0.3s ease; /* Transición suave para la sombra del texto */
+}
+
+header h1:hover {
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* Sombra del texto en hover */
 }
 
 /* Navegación */
@@ -36,11 +53,13 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Mayor espacio entre los elementos de la lista */
 }
 
 nav ul li {
     display: inline;
-    margin: 0 20px; /* Espaciado más amplio entre los elementos de navegación */
 }
 
 nav ul li a {
@@ -48,11 +67,32 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em; /* Tamaño de fuente mayor para los enlaces */
     font-weight: 500; /* Peso de fuente para destacar los enlaces */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    padding: 10px 20px; /* Mayor padding para un área de clic más grande */
+    border-radius: 30px; /* Bordes redondeados para botones más modernos */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    position: relative; /* Para efectos de pseudo-elementos */
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
 }
 
 nav ul li a:hover {
-    color: #ff4500; /* Color de enlace destacado al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco translúcido en el hover */
+    color: #fff;
+    transform: translateY(-3px); /* Efecto de elevación al pasar el cursor */
 }
 
 /* Main */
@@ -60,6 +100,23 @@ main {
     padding: 30px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Sección de productos */
+#products h2 {
+    font-size: 1.8em; /* Tamaño de fuente mayor para el título */
+    font-weight: bold; /* Peso de fuente en negrita */
+    color: #ff4500; /* Color llamativo para el texto */
+    text-align: center; /* Centra el texto */
+    margin: 20px 10px; /* Espaciado alrededor del título */
+    line-height: 1.4; /* Altura de línea para mejorar la legibilidad */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombra del texto para destacar */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.274); /* Fondo semi-transparente */
+    max-width: 90%; /* Ancho máximo del texto */
+    margin-left: auto; /* Centra el texto horizontalmente */
+    margin-right: auto; /* Centra el texto horizontalmente */
 }
 
 /* Grid de productos */
@@ -83,7 +140,7 @@ main {
 }
 
 .product-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra de caja al pasar el ratón */
+    box-shadow: 0 4px 12px rgb(0, 0, 0); /* Sombra de caja al pasar el ratón */
     transform: scale(1.02); /* Efecto de aumento al pasar el ratón */
 }
 
@@ -129,9 +186,9 @@ form {
     max-width: 600px;
     margin: 0 auto; /* Centra el formulario */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    background-color: rgba(255, 255, 255, 0.596); /* Fondo semi-transparente */
     border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra de caja para el formulario */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.096); /* Sombra de caja para el formulario */
 }
 
 form label {
@@ -169,7 +226,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    border-top: 2px solid #444; /* Línea superior para un efecto elegante */
+    border-top: 2px solid #444444bd; /* Línea superior para un efecto elegante */
     position: relative;
     bottom: 0;
 }
@@ -188,14 +245,4 @@ footer p {
 .fade-in {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-}
-
-/* Para asegurar que el contenido de la página cargue con visibilidad */
-body {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-body.loaded {
-    opacity: 1;
 }

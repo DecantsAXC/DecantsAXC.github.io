@@ -14,10 +14,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita el scroll durante la transición */
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden; /* Previene el desplazamiento horizontal */
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el alto de la ventana gráfica */
     transition: opacity 0.75s ease, transform 0.75s ease; /* Transición suave para el desvanecimiento y escalado */
 }
@@ -29,33 +26,50 @@ header {
     padding: 20px 0; /* Más padding para el encabezado */
     text-align: center;
     border-bottom: 2px solid #444; /* Línea inferior para un efecto elegante */
-    background-image: url('header-bg.jpg'); /* Imagen de fondo para el encabezado */
+    background-image: url(''); /* Imagen de fondo para el encabezado */
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
+/* Logo */
 header .logo {
     max-width: 150px; /* Ajusta el tamaño del logo */
     margin-bottom: 10px;
 }
 
+/* Estilo del título del header */
 header h1 {
     margin: 0;
     font-size: 2.5em; /* Tamaño de fuente mayor para el título */
     font-weight: 700; /* Peso de fuente para mayor impacto */
+    letter-spacing: 1px; /* Espaciado entre letras para una apariencia más refinada */
+    text-transform: uppercase; /* Mayúsculas para mayor impacto */
+    position: relative;
+    z-index: 2; /* Asegura que el título esté encima del fondo */
+    transition: text-shadow 0.3s ease; /* Transición suave para la sombra del texto */
+}
+
+header h1:hover {
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* Sombra del texto en hover */
 }
 
 /* Navegación */
+nav {
+    margin-top: 15px; /* Espaciado superior para la navegación */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 15px 0 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Mayor espacio entre los elementos de la lista */
 }
 
 nav ul li {
     display: inline;
-    margin: 0 20px; /* Espaciado más amplio entre los elementos de navegación */
 }
 
 nav ul li a {
@@ -63,11 +77,32 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em; /* Tamaño de fuente mayor para los enlaces */
     font-weight: 500; /* Peso de fuente para destacar los enlaces */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    padding: 10px 20px; /* Mayor padding para un área de clic más grande */
+    border-radius: 30px; /* Bordes redondeados para botones más modernos */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    position: relative; /* Para efectos de pseudo-elementos */
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
 }
 
 nav ul li a:hover {
-    color: #ff4500; /* Color de enlace destacado al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco translúcido en el hover */
+    color: #fff;
+    transform: translateY(-3px); /* Efecto de elevación al pasar el cursor */
 }
 
 /* Sección de Bienvenida */
@@ -82,6 +117,7 @@ section.welcome {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 100vh; /* Asegura que la sección ocupe al menos el alto de la ventana gráfica */
 }
 
 /* Contenido de bienvenida */
@@ -121,7 +157,7 @@ section.welcome p {
     overflow: hidden; /* Para que el efecto de relleno se muestre correctamente */
     display: inline-block;
     text-align: center;
-    margin-top: 1px; /* Ajusta este valor para mover el botón hacia abajo */
+    margin-top: 20px; /* Ajusta este valor para mover el botón hacia abajo */
 }
 
 .cta-button::before {
@@ -158,9 +194,9 @@ section.welcome p {
 .image-container {
     display: block;
     margin: 20px auto;
-    border: 5px solid #ccc;
+    border: 5px solid #000000;
     padding: 10px;
-    background-color: #fff;
+    background-color: #000000;
     text-align: center;
 }
 
